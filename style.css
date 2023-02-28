@@ -2,7 +2,7 @@ body {
     background-color: peachpuff;
 }
 
-/* navbar */
+/* navbar 메뉴바 */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -40,7 +40,7 @@ body {
     font-size: 28px;
 }
 
-/* HOME main container - left*/
+/* HOME 왼쪽 박스 main container - left*/
 
 .main-container {
     display: flex;
@@ -90,9 +90,9 @@ input[type=checkbox] {
     transform: scale(1.2);
 }
 
-/* 체크 리스트에 마우스 오버 하였을 때*/
+/* 체크 리스트에 마우스 올려두었을 때*/
 
-label:hover {
+input[type=checkbox]:hover+label {
     color: rgb(48, 178, 48);
 }
 
