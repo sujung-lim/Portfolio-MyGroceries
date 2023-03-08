@@ -56,13 +56,13 @@ function newCheck0() {
     
         const input = document.createElement('input');
         input.type = 'checkbox';
-        input.id = 'checkbox' + i;
+        input.id = 'condiment-checkbox' + i;
         input.classList.add('checkbox-class');
         newDiv.appendChild(input);
     
         const label = document.createElement('label');
         label.innerHTML = condiment[i];
-        label.htmlFor = 'checkbox' + i;
+        label.htmlFor = 'condiment-checkbox' + i;
         newDiv.appendChild(label);
     }
 };
@@ -79,13 +79,13 @@ function newCheck1() {
     
         const input = document.createElement('input');
         input.type = 'checkbox';
-        input.id = 'checkbox' + i;
+        input.id = 'canned-checkbox' + i;
         input.classList.add('checkbox-class');
         newDiv.appendChild(input);
     
         const label = document.createElement('label');
         label.innerHTML = canned[i];
-        label.htmlFor = 'checkbox' + i;
+        label.htmlFor = 'canned-checkbox' + i;
         newDiv.appendChild(label);
     }
 }
@@ -102,13 +102,13 @@ function newCheck2() {
     
         const input = document.createElement('input');
         input.type = 'checkbox';
-        input.id = 'checkbox' + i;
+        input.id = 'dairy-checkbox' + i;
         input.classList.add('checkbox-class');
         newDiv.appendChild(input);
     
         const label = document.createElement('label');
         label.innerHTML = dairy[i];
-        label.htmlFor = 'checkbox' + i;
+        label.htmlFor = 'dairy-checkbox' + i;
         newDiv.appendChild(label);
     }
 }
@@ -126,13 +126,13 @@ function newCheck3() {
     
         const input = document.createElement('input');
         input.type = 'checkbox';
-        input.id = 'checkbox' + i;
+        input.id = 'drink-checkbox' + i;
         input.classList.add('checkbox-class');
         newDiv.appendChild(input);
     
         const label = document.createElement('label');
         label.innerHTML = drink[i];
-        label.htmlFor = 'checkbox' + i;
+        label.htmlFor = 'drink-checkbox' + i;
         newDiv.appendChild(label);
     }
 }
@@ -150,13 +150,13 @@ function newCheck4() {
     
         const input = document.createElement('input');
         input.type = 'checkbox';
-        input.id = 'checkbox' + i;
+        input.id = 'fruit-checkbox' + i;
         input.classList.add('checkbox-class');
         newDiv.appendChild(input);
     
         const label = document.createElement('label');
         label.innerHTML = fruit[i];
-        label.htmlFor = 'checkbox' + i;
+        label.htmlFor = 'fruit-checkbox' + i;
         newDiv.appendChild(label);
     }
 }
@@ -174,13 +174,13 @@ function newCheck5() {
     
         const input = document.createElement('input');
         input.type = 'checkbox';
-        input.id = 'checkbox' + i;
+        input.id = 'meat-checkbox' + i;
         input.classList.add('checkbox-class');
         newDiv.appendChild(input);
     
         const label = document.createElement('label');
         label.innerHTML = meat[i];
-        label.htmlFor = 'checkbox' + i;
+        label.htmlFor = 'meat-checkbox' + i;
         newDiv.appendChild(label);
     }
 }
@@ -198,13 +198,13 @@ function newCheck6() {
     
         const input = document.createElement('input');
         input.type = 'checkbox';
-        input.id = 'checkbox' + i;
+        input.id = 'other-checkbox' + i;
         input.classList.add('checkbox-class');
         newDiv.appendChild(input);
     
         const label = document.createElement('label');
         label.innerHTML = other[i];
-        label.htmlFor = 'checkbox' + i;
+        label.htmlFor = 'other-checkbox' + i;
         newDiv.appendChild(label);
     }
 }
