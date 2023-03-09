@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (checked) {
             const item = document.createElement('li');
             item.textContent = label;
+            item.classList.add('checked-item');
             list.appendChild(item);
           } else {
             const items = list.querySelectorAll('li');
