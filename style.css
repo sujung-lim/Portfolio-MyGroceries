@@ -164,6 +164,21 @@ input[type=checkbox]:checked+label {
     margin-top: 120px;
 }
 
+.main-container-2 ul.urIngredients {
+    padding-left: 0;
+}
+
+.checked-item::before {
+    content: "\f2ed";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+    color: red;
+}
+
+.main-container-2 ul.urIngredients {
+    padding-inline-start: 0;
+}
+
 
 /* detailed HOME main container - left */
 .detail-container {
