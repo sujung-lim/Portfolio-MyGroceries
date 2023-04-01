@@ -2,6 +2,10 @@ body {
     background-color: peachpuff;
 }
 
+:root {
+    --green-color: rgb(48, 178, 48);
+}
+
 /* navbar 메뉴바 */
 .header-container {
     display: flex;
@@ -61,7 +65,7 @@ body {
 
 .header-main h2,
 .header-detail h2 {
-    color: rgb(48, 178, 48);
+    color: var(--green-color);
 }
 
 .article-main {
@@ -164,21 +168,36 @@ input[type=checkbox]:checked+label {
     margin-top: 120px;
 }
 
-.main-container-2 ul.urIngredients {
-    padding-left: 0;
+.checked-item {
+    text-align: left;
+    color: var(--green-color);
 }
 
 .checked-item::before {
     content: "\f2ed";
     font-family: "Font Awesome 5 Free";
+    padding-right: 5px;
     font-weight: 500;
     color: red;
 }
 
-.main-container-2 ul.urIngredients {
-    padding-inline-start: 0;
+.link-ingredient {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
 }
 
+.link-ingredient a {
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid var(--green-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.link-ingredient .hidden {
+    display: none;
+}
 
 /* detailed HOME main container - left */
 .detail-container {
