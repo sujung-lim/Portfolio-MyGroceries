@@ -148,14 +148,14 @@ input[type=checkbox]:checked+label {
 /* HOME 오른쪽 박스 main container - right */
 
 .main-container-2 {
+    position: sticky;
+    top: 30px;
     border: orange solid 3px;
+    border-radius: 10px;
     color: rgb(113, 108, 108);
     background-color: rgba(255, 0, 0, 0.12);
     width: 30%;
     height: 400px;
-    border-radius: 10px;
-    position: sticky;
-    top: 30px;
 }
 
 .header-main,
@@ -195,7 +195,9 @@ input[type=checkbox]:checked+label {
     padding: 10px;
 }
 
-.link-ingredient .hidden {
+
+
+.link-ingredient.hidden {
     display: none;
 }
 

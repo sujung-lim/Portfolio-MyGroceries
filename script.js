@@ -3,6 +3,7 @@
 // HOME 페이지 - 재료 선택 // 
 //DOM 먼저 읽은 후 Javascript 코드 실행하게 하기 위해 DOMContentLoaded 이벤트 리스너 사용
 const list = document.getElementById('urIngredients');
+const linkIngredient = document.querySelector('.link-ingredient');
 
 document.addEventListener('DOMContentLoaded', function() {
     const checkboxes = document.querySelectorAll('.checkbox-class');
@@ -18,12 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
             item.textContent = label;
             item.classList.add('checked-item');
             list.appendChild(item);
+            linkIngredient.classList.remove('hidden');
           } else {
             const items = list.querySelectorAll('li');
             items.forEach(item => {
               if (item.textContent === label) {
                 item.remove();
               }
+              
             });
           }
       
@@ -31,9 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
           if (list.children.length == 0) {
               const p = document.getElementById('noItem');
               p.style.display = 'block';
+              linkIngredient.classList.add('hidden');
             } else {
               const p = document.getElementById('noItem');
               p.style.display = 'none';
+              linkIngredient.classList.remove('hidden');
             }
       
         });
