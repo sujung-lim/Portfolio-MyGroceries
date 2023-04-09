@@ -4,6 +4,7 @@
 //DOM 먼저 읽은 후 Javascript 코드 실행하게 하기 위해 DOMContentLoaded 이벤트 리스너 사용
 const list = document.getElementById('urIngredients');
 const linkIngredient = document.querySelector('.link-ingredient');
+const mainContainer2 = document.querySelector('.main-container-2');
 
 document.addEventListener('DOMContentLoaded', function() {
     const checkboxes = document.querySelectorAll('.checkbox-class');
@@ -41,10 +42,14 @@ document.addEventListener('DOMContentLoaded', function() {
               linkIngredient.classList.remove('hidden');
             }
       
+            const listHeight = list.scrollHeight;
+            mainContainer2.style.height = `${listHeight + 250}px`;
+
         });
       });
       
   });
+
 
   
 // 재료 더보기 페이지 //
