@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
               linkIngredient.classList.remove('hidden');
             }
       
+            //체크아이템이 늘어날수록 컨테이너 높이 늘리기
             const listHeight = list.scrollHeight;
             mainContainer2.style.height = `${listHeight + 250}px`;
 
@@ -50,10 +51,15 @@ document.addEventListener('DOMContentLoaded', function() {
       
   });
 
+//휴지통 아이콘 누르면 선택된 재료 삭제하기
+const trash = document.querySelector("checked-item::before");
 
+trash.addEventListener("click", function() {
+    items.classList.remove('li');
+})
   
-// 재료 더보기 페이지 //
-// 재료 체크박스 추가
+// see more ingredients 재료 더보기 페이지(detail.html) //
+// 더 많은 재료 보기
 
 let condiment = ['Honey', 'Red pepper paste', 'Mayonnaise', 'Ketchup', 'Soy Sauce', 'Chilli Powder', 'Fish Sauce', 'Chilli Sauce', 'Barbeque Sauce', 'Hot Sauce', 'Mustard', 'Balsamic Vinegar', 'Vinegar', 'Apple Vinegar', 'Oriental Dressing'];
 const sauceLen = condiment.length;
@@ -220,7 +226,7 @@ function newCheck6() {
     }
 }
 
-// 재료 체크박스 추가 함수들은 '재료 더 보기' 페이지에서만 실행
+// 더 많은 재료 보기 함수들은 'see more ingredients' 페이지에서만 실행
 if (window.location.pathname.endsWith('detail.html')) {
     newCheck0();
     newCheck1();

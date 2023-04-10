@@ -151,12 +151,12 @@ input[type=checkbox]:checked+label {
     position: relative;
     position: sticky;
     top: 30px;
+    width: 30%;
+    height: 50%;
     border: orange solid 3px;
     border-radius: 10px;
     color: rgb(113, 108, 108);
     background-color: rgba(255, 0, 0, 0.12);
-    width: 30%;
-    height: 400px;
 }
 
 .header-main,
@@ -167,6 +167,10 @@ input[type=checkbox]:checked+label {
 
 .main-container-2 p {
     margin-top: 120px;
+}
+
+#urIngredients {
+    overflow: auto;
 }
 
 .checked-item {
