@@ -25,9 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
             //휴지통 아이콘 만들기
             const trashBtn = document.createElement('button');
             trashBtn.classList.add('trash-icon');
-            const trashImg = document.createElement('img');
-            trashImg.src = 'svg/trash-icon.svg';
-            trashBtn.appendChild(trashImg);
             item.appendChild(trashBtn);
 
             //휴지통 아이콘 누르면 아이템 삭제하기
