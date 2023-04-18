@@ -14,23 +14,37 @@ document.addEventListener('DOMContentLoaded', function() {
         checkbox.addEventListener('change', event => {
           const checked = event.target.checked;
           const label = event.target.nextElementSibling.textContent;
-      
+
           if (checked) {
             const item = document.createElement('li');
             item.textContent = label;
             item.classList.add('checked-item');
             list.appendChild(item);
             linkIngredient.classList.remove('hidden');
+
+            //휴지통 아이콘 만들기
+            const trashBtn = document.createElement('button');
+            trashBtn.classList.add('trash-icon');
+            const trashImg = document.createElement('img');
+            trashImg.src = 'svg/trash-icon.svg';
+            trashBtn.appendChild(trashImg);
+            item.appendChild(trashBtn);
+
+            //휴지통 아이콘 누르면 아이템 삭제하기
+            trashBtn.addEventListener('click', event => {
+              const listItem = event.target.closest('li');
+              listItem.remove();
+            })
+
           } else {
             const items = list.querySelectorAll('li');
             items.forEach(item => {
               if (item.textContent === label) {
                 item.remove();
               }
-              
             });
           }
-      
+
           //체크된 것이 없으면 없다고 문구 띄우기
           if (list.children.length == 0) {
               const p = document.getElementById('noItem');
@@ -45,19 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
             //체크아이템이 늘어날수록 컨테이너 높이 늘리기
             const listHeight = list.scrollHeight;
             mainContainer2.style.height = `${listHeight + 250}px`;
-
         });
       });
       
   });
 
-//휴지통 아이콘 누르면 선택된 재료 삭제하기
-const trash = document.querySelector("checked-item::before");
-
-trash.addEventListener("click", function() {
-    items.classList.remove('li');
-})
-  
 // see more ingredients 재료 더보기 페이지(detail.html) //
 // 더 많은 재료 보기
 
