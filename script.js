@@ -1,11 +1,12 @@
 "use strict"
 
 // HOME 페이지 - 재료 선택 // 
-//DOM 먼저 읽은 후 Javascript 코드 실행하게 하기 위해 DOMContentLoaded 이벤트 리스너 사용
+
 const list = document.getElementById('urIngredients');
 const linkIngredient = document.querySelector('.link-ingredient');
 const mainContainer2 = document.querySelector('.main-container-2');
 
+//DOM 먼저 읽은 후 Javascript 코드 실행하게 하기 위해 DOMContentLoaded 이벤트 리스너 사용
 document.addEventListener('DOMContentLoaded', function() {
     const checkboxes = document.querySelectorAll('.checkbox-class');
     
@@ -62,6 +63,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
       
+  });
+
+  const toFridge = document.querySelector('.btn-to-fridge');
+  const toRecipe = document.querySelector('.btn-recipe');
+
+  //선택된 재료들 냉장고에 추가하기 
+//   toFridge.addEventListener('click', function() {
+
+//     const table = document.querySelector('.ingredient-table');
+//     const tbody = document.createElement('tbody');
+//     const row = document.createElement('tr');
+
+//     const nameCell = document.createElement('td');
+// nameCell.classList.add('td-1-1');
+// nameCell.textContent = 'Avocado';
+
+// row.appendChild(nameCell);  
+//   })
+
+  toFridge.addEventListener('click', function() {
+    const table = document.querySelector('.ingredient-table');
+  
+    const tbody = document.createElement('tbody');
+    table.appendChild(tbody);
+  
+    const row = document.createElement('tr');
+    tbody.appendChild(row);
+  
+    const nameCell = document.createElement('td');
+    nameCell.classList.add('td-1-1');
+    nameCell.textContent = 'Avocado';
+    row.appendChild(nameCell);
   });
 
 // see more ingredients 재료 더보기 페이지(detail.html) //
