@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
             trashBtn.addEventListener('click', event => {
               const listItem = event.target.closest('li');
               listItem.remove();
+
+              //휴지통 누르면 체크 리스트에 체크된 재료도 체크 풀어주기
+              checkbox.checked = !checkbox.checked; 
             })
 
           } else {
