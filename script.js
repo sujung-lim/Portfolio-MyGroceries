@@ -27,7 +27,7 @@ links.forEach(function (link) {
 // 초기에 첫 번째 페이지를 보여줌 (#home)
 showPage('home');
 
-//로고를 클릭했을 때, 페이지 맨 위 스롤고 #home으로 이도ㅇ
+//로고를 클릭했을 때, 페이지 맨 위로 스크롤하고 #home으로 이동
 const logo = document.querySelector('.header-logo');
 logo.addEventListener('click', function (event) {
   // event.preventDefault();
@@ -131,7 +131,13 @@ toFridge.addEventListener('click', function () {
   row.appendChild(nameCell);
 });
 
-// see more ingredients 재료 더보기 페이지(detail.html) //
+// ---- see more ingredients
+// home에서 see more ingredients 누르면 해당 섹션 보여주기
+const moreIngredientsLink = document.querySelector('#home .moreIngredients');
+moreIngredientsLink.addEventListener('click', function (event) {
+  showPage('detail-ingredients');
+});
+
 // 더 많은 재료 보기
 
 let condiment = [
@@ -408,3 +414,5 @@ if (window.location.pathname.endsWith('detail.html')) {
   newCheck5();
   newCheck6();
 }
+
+// ---- see more ingredients
