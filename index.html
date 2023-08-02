@@ -30,7 +30,7 @@
 
       <a href="#" class="header-login">LogIn</a>
     </div>
-    <!-- navbar의 home 메뉴 -->
+    <!-- navbar의 home 메뉴 (default) -->
     <section id="home">
       <div class="main-container">
         <div class="main-container-1">
@@ -182,7 +182,7 @@
             </div>
           </div>
           <footer>
-            <a href="detail.html" class="article-bottom"
+            <a href="#moreIngredients" class="moreIngredients"
               >see more ingredients</a
             >
           </footer>
@@ -194,13 +194,65 @@
           <ul id="urIngredients"></ul>
           <div class="link-ingredient hidden">
             <button>
-              <a href="./fridge.html" class="btn-to-fridge">Add to Fridge</a>
+              <a href="#fridge" class="btn-to-fridge">Add to Fridge</a>
             </button>
             <button><a href="#" class="btn-recipe">Find Recipe</a></button>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- home메뉴에서 ingredients 더 보기  -->
+    <section id="detail-ingredients" style="display: none">
+      <div class="detail-container">
+        <div class="detail-container-1">
+          <header class="header-detail">
+            <h2>WHAT'S IN YOUR FRIDGE?</h2>
+          </header>
+
+          <div class="article-detail">
+            <h3 class="detail-title">CONDIMENTS</h3>
+          </div>
+
+          <div class="article-detail">
+            <h3 class="detail-title">CANNED/JARRED</h3>
+          </div>
+
+          <div class="article-detail">
+            <h3 class="detail-title">DAIRY</h3>
+          </div>
+
+          <div class="article-detail">
+            <h3 class="detail-title">DRINKS</h3>
+          </div>
+
+          <div class="article-detail">
+            <h3 class="detail-title">FRUITS</h3>
+          </div>
+
+          <div class="article-detail">
+            <h3 class="detail-title">MEATS</h3>
+          </div>
+
+          <div class="article-detail">
+            <h3 class="detail-title">OTHERS</h3>
+          </div>
+        </div>
+
+        <div class="main-container-2">
+          <h3>Your Ingredients</h3>
+          <p id="noItem">No selected ingredients</p>
+          <ul id="urIngredients"></ul>
+          <div class="link-ingredient hidden">
+            <button>
+              <a href="./fridge.html" class="link-fridge">to my fridge</a>
+            </button>
+            <button><a href="#" class="link-recipe">recipe</a></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- navbar의 fridge 메뉴 -->
     <section id="fridge" style="display: none">
       <div class="fridge-container">
@@ -255,13 +307,37 @@
         </div>
       </div>
     </section>
+
     <!-- navbar의 list 메뉴 -->
     <section id="list" style="display: none">
       <div class="header-list">
-        <h2 style="margin: 5px">Shopping List</h2>
-        <input type="text" class="text-list" placeholder="e.g. egg..." />
+        <h2>Shopping List</h2>
+        <input type="text" class="input-list" placeholder="e.g. egg..." />
         <button class="addBtn">Add</button>
       </div>
+      <ul class="list-ul"></ul>
+      <div class="list-btn-wrapper"></div>
+
+      <ul class="list-ul">
+        <li class="list-li">
+          <h3 class="list-title">딸기</h3>
+          <button class="list-check"></button>
+          <button class="list-edit"></button>
+          <button class="list-delete"></button>
+        </li>
+        <li class="list-li">
+          <h3 class="list-title">복숭아</h3>
+          <button class="list-check"></button>
+          <button class="list-edit"></button>
+          <button class="list-delete"></button>
+        </li>
+        <li class="list-li">
+          <h3 class="list-title">방울토마토</h3>
+          <button class="list-check"></button>
+          <button class="list-edit"></button>
+          <button class="list-delete"></button>
+        </li>
+      </ul>
     </section>
 
     <script src="script.js"></script>

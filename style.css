@@ -1,193 +1,193 @@
 body {
-    background-color: peachpuff;
+  background-color: peachpuff;
 }
 
 :root {
-    --green-color: rgb(48, 178, 48);
+  --green-color: rgb(48, 178, 48);
 }
 
 /* navbar 메뉴바 */
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
 }
 
 .header-container a {
-    text-decoration: none;
-    color: rgb(81, 78, 78);
+  text-decoration: none;
+  color: rgb(81, 78, 78);
 }
 
 .header-navbar ul {
-    padding-left: 0px;
+  padding-left: 0px;
 }
 
 .header-navbar li {
-    list-style: none;
-    display: inline-block;
-    padding: 20px;
-    font-size: 20px;
+  list-style: none;
+  display: inline-block;
+  padding: 20px;
+  font-size: 20px;
 }
 
 .header-logo {
-    color: orange !important;
-    font-size: 32px;
-    padding: 20px;
-    font-weight: bold;
-    font-family: 'Oswald', sans-serif;
-    padding-left: 30px;
+  color: orange !important;
+  font-size: 32px;
+  padding: 20px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  padding-left: 30px;
 }
 
 .header-login {
-    padding-right: 30px;
-    padding-top: 33px;
-    font-size: 28px;
+  padding-right: 30px;
+  padding-top: 33px;
+  font-size: 28px;
 }
 
 /* HOME 왼쪽 박스 main container - left*/
 
 .main-container {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 50px;
-    text-align: center;
-    height: 650px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  text-align: center;
+  height: 650px;
 }
 
 .main-container-1 {
-    border: orange solid 3px;
-    color: rgb(113, 108, 108);
-    background-color: rgba(255, 0, 0, 0.12);
-    width: 50%;
-    height: 100%;
-    border-radius: 10px;
+  border: orange solid 3px;
+  color: rgb(113, 108, 108);
+  background-color: rgba(255, 0, 0, 0.12);
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .header-main h2,
 .header-detail h2 {
-    color: var(--green-color);
+  color: var(--green-color);
 }
 
 .article-main {
-    padding: 25px;
-    display: flex;
+  padding: 25px;
+  display: flex;
 }
 
 .article-left {
-    text-align: left;
-    width: 50%;
-    font-size: 18px;
+  text-align: left;
+  width: 50%;
+  font-size: 18px;
 }
 
 .article-right {
-    text-align: left;
-    width: 50%;
-    font-size: 18px;
+  text-align: left;
+  width: 50%;
+  font-size: 18px;
 }
 
 .article-bottom {
-    text-decoration: none;
-    color: rgb(48, 178, 48);
+  text-decoration: none;
+  color: rgb(48, 178, 48);
 }
 
-input[type=checkbox] {
-    transform: scale(1.2);
+input[type='checkbox'] {
+  transform: scale(1.2);
 }
 
 /* 체크 리스트에 마우스 올려두었을 때*/
 
-input[type=checkbox]:hover+label {
-    color: rgb(48, 178, 48);
+input[type='checkbox']:hover + label {
+  color: rgb(48, 178, 48);
 }
 
-input[type=checkbox],
-input[type=checkbox]:hover {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    -o-appearance: none;
-    outline: none;
-    content: none;
+input[type='checkbox'],
+input[type='checkbox']:hover {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  outline: none;
+  content: none;
 }
 
-input[type=checkbox]:before {
-    content: "✓";
-    font-size: 18px;
-    color: transparent !important;
-    display: block;
-    width: 15px;
-    height: 15px;
-    border: 1.5px solid rgb(113, 108, 108);
-    border-radius: 5px;
-    margin-right: 0px;
+input[type='checkbox']:before {
+  content: '✓';
+  font-size: 18px;
+  color: transparent !important;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid rgb(113, 108, 108);
+  border-radius: 5px;
+  margin-right: 0px;
 }
 
-input[type=checkbox]:hover:before {
-    content: "✓";
-    font-size: 18px;
-    color: transparent !important;
-    display: block;
-    width: 15px;
-    height: 15px;
-    border: 1.5px solid rgb(48, 178, 48);
-    border-radius: 5px;
-    margin-right: 0px;
+input[type='checkbox']:hover:before {
+  content: '✓';
+  font-size: 18px;
+  color: transparent !important;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid rgb(48, 178, 48);
+  border-radius: 5px;
+  margin-right: 0px;
 }
 
-input[type=checkbox]:checked:before {
-    color: white !important;
-    width: 15px;
-    height: 15px;
-    border: 1.5px solid rgb(48, 178, 48);
-    background-color: rgb(48, 178, 48);
+input[type='checkbox']:checked:before {
+  color: white !important;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid rgb(48, 178, 48);
+  background-color: rgb(48, 178, 48);
 }
 
-input[type=checkbox]:checked+label {
-    color: rgb(48, 178, 48);
+input[type='checkbox']:checked + label {
+  color: rgb(48, 178, 48);
 }
 
 /* HOME 오른쪽 박스 main container - right */
 
 .main-container-2 {
-    position: relative;
-    position: sticky;
-    top: 30px;
-    width: 30%;
-    height: 50%;
-    border: orange solid 3px;
-    border-radius: 10px;
-    color: rgb(113, 108, 108);
-    background-color: rgba(255, 0, 0, 0.12);
+  position: relative;
+  position: sticky;
+  top: 30px;
+  width: 30%;
+  height: 50%;
+  border: orange solid 3px;
+  border-radius: 10px;
+  color: rgb(113, 108, 108);
+  background-color: rgba(255, 0, 0, 0.12);
 }
 
 .header-main,
 .main-container-2 h3 {
-    margin-top: 50px;
-    font-size: 23px;
+  margin-top: 50px;
+  font-size: 23px;
 }
 
 .main-container-2 p {
-    margin-top: 120px;
+  margin-top: 120px;
 }
 
 #urIngredients {
-    overflow: auto;
+  overflow: auto;
 }
 
 .checked-item {
-    display: flex;
-    text-align: center;
-    color: var(--green-color);
+  display: flex;
+  text-align: center;
+  color: var(--green-color);
 }
 
 .checked-item .trash-icon {
-    order: -1;
-    margin-right: 5px;
-    background: url("svg/trash-icon.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
+  order: -1;
+  margin-right: 5px;
+  background: url('svg/trash-icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 /* .checked-item::before {
@@ -201,143 +201,227 @@ input[type=checkbox]:checked+label {
 } */
 
 .link-ingredient {
-    position: absolute;
-    left: 50%;
-    bottom: 10%;
-    transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
 }
 
 .link-ingredient button {
-    background-color: var(--green-color);
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
+  background-color: var(--green-color);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .link-ingredient button a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
-
 .link-ingredient.hidden {
-    display: none;
+  display: none;
 }
 
 /* detailed HOME main container - left */
 .detail-container {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 50px;
-    text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .detail-container-1 {
-    border: orange solid 2px;
-    color: rgb(148, 141, 141);
-    background-color: rgba(255, 0, 0, 0.15);
-    width: 50%;
-    border-radius: 10px;
+  border: orange solid 2px;
+  color: rgb(148, 141, 141);
+  background-color: rgba(255, 0, 0, 0.15);
+  width: 50%;
+  border-radius: 10px;
 }
 
 .article-detail {
-    padding: 25px;
+  padding: 25px;
 }
 
 .article-detail {
-    text-align: left;
-    width: 100%;
-    font-size: 18px;
+  text-align: left;
+  width: 100%;
+  font-size: 18px;
 }
 
 .detail-title {
-    border-bottom: rgb(48, 178, 48) solid 2px;
-    width: 90%;
+  border-bottom: rgb(48, 178, 48) solid 2px;
+  width: 90%;
 }
 
 /* 체크된 리스트 */
 .checked-item {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 /* MY FRIDGE */
 .main-container-fridge {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    margin-top: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 50px;
 }
 
 /* MY FRIDGE - top freezer */
 
 .fridge-container {
-    width: 70%;
-    height: 600px;
-    margin: 0 auto;
-    margin-top: 50px;
+  width: 70%;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 .fridge-container-top {
-    height: 40%;
-    background-color: rgba(255, 165, 0, .85);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  height: 40%;
+  background-color: rgba(255, 165, 0, 0.85);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .fridge-container-bottom {
-    height: 60%;
-    background-color: rgba(255, 165, 0, .85);
-    margin-top: 10px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    position: relative;
+  height: 60%;
+  background-color: rgba(255, 165, 0, 0.85);
+  margin-top: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: relative;
 }
 
 .fridge-handle {
-    width: 20px;
-    height: 60px;
-    background-color: white;
-    position: absolute;
-    left: 20px;
-    top: 60px;
-    border-radius: 5px;
+  width: 20px;
+  height: 60px;
+  background-color: white;
+  position: absolute;
+  left: 20px;
+  top: 60px;
+  border-radius: 5px;
 }
 
 .ingredient-table {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 30px;
-    border-spacing: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  border-spacing: 20px;
 }
 
 .th-1,
 .th-2,
 .th-3 {
-    width: 50%;
+  width: 50%;
 }
 
 /* Shopping List */
 .header-list {
-    background-color: rgb(48, 178, 48);
-    color: white;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 40px;
-    margin-top: 60px;
-    font-size: 30px;
-    text-align: center;
-    border-radius: 10px;
+  background-color: rgb(48, 178, 48);
+  color: white;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+  margin-top: 60px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 10px;
 }
 
-.text-list {
-    font-size: 20px;
-    width: 80%;
-    padding: 10px;
+.header-list h2 {
+  margin: 5x;
+}
+
+.input-list {
+  font-size: 20px;
+  width: 80%;
+  padding: 10px;
 }
 
 .addBtn {
-    font-size: 20px;
-    padding: 10px;
+  font-size: 20px;
+  padding: 10px;
 }
+
+.list-ul {
+  margin-top: 100px;
+}
+
+/* .list-ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 50%;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  list-style: none;
+  border: orange solid 3px;
+  border-radius: 10px;
+  color: rgb(113, 108, 108);
+  background-color: rgba(255, 0, 0, 0.12);
+} */
+
+.list-ul {
+  width: 70%;
+}
+
+.list-li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-li h3,
+.list-li button {
+  padding: 20px;
+  border: orange solid 3px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 60px;
+  color: rgb(113, 108, 108);
+  background-color: rgba(255, 0, 0, 0.12);
+}
+
+.list-li h3 {
+  width: 50%;
+}
+
+.list-li button {
+  width: 10%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15%;
+  cursor: pointer;
+}
+
+.list-check {
+  background: url('svg/check-icon.svg');
+}
+
+.list-edit {
+  background: url('svg/edit-icon.svg');
+}
+
+.list-delete {
+  background: url('svg/trash-icon.svg');
+}
+
+/* .list-ul li .trash-icon {
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+
+.trash-icon img {
+  max-height: 100%;
+} */
