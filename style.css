@@ -345,23 +345,75 @@ input[type='checkbox']:checked + label {
   padding: 10px;
 }
 
-.added-list-container {
+.list-ul {
   margin-top: 100px;
 }
 
-.list-ul li {
-  list-style: none;
-  width: 70%;
+/* .list-ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 50%;
   padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
+
+  list-style: none;
   border: orange solid 3px;
   border-radius: 10px;
   color: rgb(113, 108, 108);
   background-color: rgba(255, 0, 0, 0.12);
+} */
+
+.list-ul {
+  width: 70%;
 }
 
-.list-ul li .trash-icon {
-  order: -1;
+.list-li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-li h3,
+.list-li button {
+  padding: 20px;
+  border: orange solid 3px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 60px;
+  color: rgb(113, 108, 108);
+  background-color: rgba(255, 0, 0, 0.12);
+}
+
+.list-li h3 {
+  width: 50%;
+}
+
+.list-li button {
+  width: 10%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15%;
+  cursor: pointer;
+}
+
+.list-check {
+  background: url('svg/check-icon.svg');
+}
+
+.list-edit {
+  background: url('svg/edit-icon.svg');
+}
+
+.list-delete {
+  background: url('svg/trash-icon.svg');
+}
+
+/* .list-ul li .trash-icon {
   margin-right: 5px;
   cursor: pointer;
   background-color: transparent;
@@ -372,4 +424,4 @@ input[type='checkbox']:checked + label {
 
 .trash-icon img {
   max-height: 100%;
-}
+} */

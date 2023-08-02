@@ -409,6 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const addedList = document.createElement('li');
     const trashBtn = document.createElement('button');
     const trashIcon = document.createElement('img');
+    const btnWrapper = document.querySelector('.list-btn-wrapper');
 
     // 장바구니 리스트 추가
     addedList.innerHTML = listInput.value;
@@ -418,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function () {
     trashBtn.appendChild(trashIcon);
 
     addedListUl.appendChild(addedList);
-    addedList.appendChild(trashBtn);
+    btnWrapper.appendChild(trashBtn);
 
     // 입력창 비우기
     listInput.value = '';
