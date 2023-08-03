@@ -17,7 +17,7 @@ function showPage(pageId) {
 // 네비게이션 바의 링크를 클릭했을 때 해당 페이지를 보여줌
 const links = document.querySelectorAll('nav a');
 links.forEach(function (link) {
-  link.addEventListener('click', function (event) {
+  link.addEventListener('click', function (e) {
     // event.preventDefault();
     var targetPageId = link.getAttribute('href').substring(1);
     showPage(targetPageId);
@@ -29,7 +29,7 @@ showPage('home');
 
 //로고를 클릭했을 때, 페이지 맨 위로 스크롤하고 #home으로 이동
 const logo = document.querySelector('.header-logo');
-logo.addEventListener('click', function (event) {
+logo.addEventListener('click', function (e) {
   // event.preventDefault();
   window.scroll(0, 0);
   showPage('home');
@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 체크박스가 체크 표시되면, 오른쪽 박스에 체크한 순서대로 리스트 띄우기
   checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', event => {
-      const checked = event.target.checked;
-      const label = event.target.nextElementSibling.textContent;
+    checkbox.addEventListener('change', e => {
+      const checked = e.target.checked;
+      const label = e.target.nextElementSibling.textContent;
 
       console.log(`Checkbox "${label}" is checked: ${checked}`);
 
@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
         item.appendChild(trashBtn);
 
         //휴지통 아이콘 누르면 아이템 삭제하기
-        trashBtn.addEventListener('click', event => {
-          const listItem = event.target.closest('li');
+        trashBtn.addEventListener('click', e => {
+          const listItem = e.target.closest('li');
           listItem.remove();
 
           //휴지통 누르면 체크 리스트에 체크된 재료도 체크 풀어주기
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   // home에서 see more ingredients 누르면 해당 섹션 보여주기
   const moreIngredientsLink = document.querySelector('#home .moreIngredients');
-  moreIngredientsLink.addEventListener('click', function (event) {
+  moreIngredientsLink.addEventListener('click', function (e) {
     showPage('detail-ingredients');
     newCheck0();
     newCheck1();
@@ -406,27 +406,75 @@ document.addEventListener('DOMContentLoaded', function () {
   const addedListUl = document.querySelector('.list-ul');
 
   addButton.addEventListener('click', () => {
+    // html 요소 만들기
+    // <li>
     const addedList = document.createElement('li');
-    const trashBtn = document.createElement('button');
-    const trashIcon = document.createElement('img');
-    const btnWrapper = document.querySelector('.list-btn-wrapper');
+    addedList.classList.add('list-li');
+    // <h3> 리스트 항목
+    const addedLiTitle = document.createElement('h3');
+    addedLiTitle.classList.add('list-title');
+    addedLiTitle.innerText = listInput.value;
+    // <button> 체크 버튼
+    const liCheckBtn = document.createElement('button');
+    liCheckBtn.classList.add('list-check-btn');
+    liCheckBtn.addEventListener('click', handleListCheck);
+    // <button> 수정 버튼
+    const liEditBtn = document.createElement('button');
+    liEditBtn.classList.add('list-edit-btn');
+    liEditBtn.addEventListener('click', handleListEdit);
+    // <button> 삭제 버튼
+    const liDeleteBtn = document.createElement('button');
+    liDeleteBtn.classList.add('list-delete-btn');
+    liDeleteBtn.addEventListener('click', () => addedList.remove());
 
-    // 장바구니 리스트 추가
-    addedList.innerHTML = listInput.value;
-    trashBtn.classList.add('trash-icon');
-    trashIcon.src = 'svg/trash-icon.svg';
-
-    trashBtn.appendChild(trashIcon);
-
+    // 만든 html 요소 집어넣기
     addedListUl.appendChild(addedList);
-    btnWrapper.appendChild(trashBtn);
+
+    addedList.appendChild(addedLiTitle);
+    addedList.appendChild(liCheckBtn);
+    addedList.appendChild(liEditBtn);
+    addedList.appendChild(liDeleteBtn);
 
     // 입력창 비우기
     listInput.value = '';
 
-    // 장바구니 리스트 삭제
-    trashBtn.addEventListener('click', () => {
-      addedList.remove();
-    });
+    // 체크 버튼 누르면 완료 표시로 줄 긋기
+    addedLiTitle.style.textDecoration = 'none';
+
+    function handleListCheck() {
+      if (addedLiTitle.style.textDecoration === 'line-through 3px black') {
+        addedLiTitle.style.textDecoration = 'none';
+        addedLiTitle.style.backgroundColor = 'rgba(255, 0, 0, 0.12)';
+      } else {
+        addedLiTitle.style.textDecoration = 'line-through 3px black';
+        addedLiTitle.style.backgroundColor = 'rgba(127, 98, 98, 0.6)';
+      }
+    }
+
+    // 수정 버튼 누르면 리스트 제목 변경
+
+    function handleListEdit(e) {
+      e.preventDefault(); //button의 기본 동작인 전송(submit)을 방지하기 위함
+
+      const addedList = this.parentNode;
+      const addedLiTitle = addedList.querySelector('.list-title');
+
+      if (addedLiTitle.tagName.toLowerCase() === 'h3') {
+        const input = document.createElement('input');
+        input.value = addedLiTitle.textContent;
+
+        input.addEventListener('keydown', e => {
+          if (e.key === 'Enter') {
+            const newTitle = input.value;
+            addedLiTitle.textContent = newTitle;
+            input.parentNode.replaceChild(addedLiTitle, input);
+          }
+        });
+
+        addedLiTitle.parentNode.replaceChild(input, addedLiTitle);
+        input.focus();
+      }
+    }
   });
+  // ---- SHOPPING LIST 페이지
 });
