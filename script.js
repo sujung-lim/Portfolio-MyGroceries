@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 체크 버튼 누르면 완료 표시로 줄 긋기
     addedLiTitle.style.textDecoration = 'none';
 
-    function handleListCheck(e) {
+    function handleListCheck() {
       if (addedLiTitle.style.textDecoration === 'line-through 3px black') {
         addedLiTitle.style.textDecoration = 'none';
         addedLiTitle.style.backgroundColor = 'rgba(255, 0, 0, 0.12)';
@@ -452,6 +452,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 수정 버튼 누르면 리스트 제목 변경
+
+    function handleListEdit(e) {
+      e.preventDefault(); //button의 기본 동작인 전송(submit)을 방지하기 위함
+
+      const addedList = this.parentNode;
+      const addedLiTitle = addedList.querySelector('.list-title');
+
+      if (addedLiTitle.tagName.toLowerCase() === 'h3') {
+        const input = document.createElement('input');
+        input.value = addedLiTitle.textContent;
+
+        input.addEventListener('keydown', e => {
+          if (e.key === 'Enter') {
+            const newTitle = input.value;
+            addedLiTitle.textContent = newTitle;
+            input.parentNode.replaceChild(addedLiTitle, input);
+          }
+        });
+
+        addedLiTitle.parentNode.replaceChild(input, addedLiTitle);
+        input.focus();
+      }
+    }
   });
   // ---- SHOPPING LIST 페이지
 });
