@@ -369,12 +369,18 @@ input[type='checkbox']:checked + label {
 } */
 
 .list-ul {
-  width: 70%;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .list-li {
-  width: 100%;
+  width: 70%;
   display: flex;
+  gap: 5px;
   justify-content: center;
   align-items: center;
 }
@@ -393,7 +399,7 @@ input[type='checkbox']:checked + label {
 
 .list-li h3,
 .list-li input {
-  width: 50%;
+  width: 40%;
 }
 
 .list-li input {
