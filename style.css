@@ -4,6 +4,7 @@ body {
 
 :root {
   --green-color: rgb(48, 178, 48);
+  --main-box-color: rgba(255, 0, 0, 0.12);
 }
 
 /* navbar 메뉴바 */
@@ -57,7 +58,7 @@ body {
 .main-container-1 {
   border: orange solid 3px;
   color: rgb(113, 108, 108);
-  background-color: rgba(255, 0, 0, 0.12);
+  background-color: var(--main-box-color);
   width: 50%;
   height: 100%;
   border-radius: 10px;
@@ -156,7 +157,7 @@ input[type='checkbox']:checked + label {
   border: orange solid 3px;
   border-radius: 10px;
   color: rgb(113, 108, 108);
-  background-color: rgba(255, 0, 0, 0.12);
+  background-color: var(--main-box-color);
 }
 
 .header-main,
@@ -364,7 +365,7 @@ input[type='checkbox']:checked + label {
   border: orange solid 3px;
   border-radius: 10px;
   color: rgb(113, 108, 108);
-  background-color: rgba(255, 0, 0, 0.12);
+  background-color: var(--main-box-color);
 } */
 
 .list-ul {
@@ -386,7 +387,7 @@ input[type='checkbox']:checked + label {
   box-sizing: border-box;
   height: 60px;
   color: rgb(113, 108, 108);
-  background-color: rgba(255, 0, 0, 0.12);
+  background-color: var(--main-box-color);
 }
 
 .list-li h3 {
@@ -401,27 +402,14 @@ input[type='checkbox']:checked + label {
   cursor: pointer;
 }
 
-.list-check {
+.list-check-btn {
   background: url('svg/check-icon.svg');
 }
 
-.list-edit {
+.list-edit-btn {
   background: url('svg/edit-icon.svg');
 }
 
-.list-delete {
+.list-delete-btn {
   background: url('svg/trash-icon.svg');
 }
-
-/* .list-ul li .trash-icon {
-  margin-right: 5px;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  width: 30px;
-  height: 30px;
-}
-
-.trash-icon img {
-  max-height: 100%;
-} */
