@@ -453,6 +453,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 수정 버튼 누르면 리스트 제목 변경
 
+    let isUpdatingTitle = false;
+
     function handleListEdit(e) {
       e.preventDefault(); //button의 기본 동작인 전송(submit)을 방지하기 위함
 
@@ -463,17 +465,35 @@ document.addEventListener('DOMContentLoaded', function () {
         const input = document.createElement('input');
         input.value = addedLiTitle.textContent;
 
+        // 키보드의 Enter를 누를 경우 제목 업데이트
         input.addEventListener('keydown', e => {
           if (e.key === 'Enter') {
-            const newTitle = input.value;
-            addedLiTitle.textContent = newTitle;
-            input.parentNode.replaceChild(addedLiTitle, input);
+            if (!isUpdatingTitle) {
+              isUpdatingTitle = true;
+              updateTitle(input, addedLiTitle);
+            }
+          }
+        });
+
+        // onBlur 이벤트를 사용하여 input 외부를 클릭할 때 제목 업데이트
+        input.addEventListener('blur', () => {
+          if (!isUpdatingTitle) {
+            isUpdatingTitle = true;
+            updateTitle(input, addedLiTitle);
           }
         });
 
         addedLiTitle.parentNode.replaceChild(input, addedLiTitle);
         input.focus();
       }
+    }
+
+    // 제목 업데이트 함수
+    function updateTitle(input, addedLiTitle) {
+      const newTitle = input.value;
+      addedLiTitle.textContent = newTitle;
+      input.parentNode.replaceChild(addedLiTitle, input);
+      isUpdatingTitle = false;
     }
   });
   // ---- SHOPPING LIST 페이지
