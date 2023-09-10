@@ -1,3 +1,6 @@
+페이지: https://sujung-lim.github.io/Vanilla-JS-MyGroceries/
+
+
 # 포트폴리오 - MyGroceries
 NO Base 상태로 직접 부딪히며 만들어본 첫 포트폴리오 입니다!<br>
 오직 HTML, CSS, JavaScript만을 이용하여 바닐라 자바스크립트에 익숙해지고 직접 코드 작성을 통해 자바스크립트 언어를 배우고자 웹사이트를 만들기 시작하였습니다.
