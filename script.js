@@ -171,6 +171,8 @@ document.addEventListener('DOMContentLoaded', function () {
       label.innerHTML = condiment[i];
       label.htmlFor = 'condiment-checkbox' + i;
       newDiv.appendChild(label);
+
+      attachCheckboxListener(input);
     }
   }
 
@@ -206,6 +208,8 @@ document.addEventListener('DOMContentLoaded', function () {
       label.innerHTML = canned[i];
       label.htmlFor = 'canned-checkbox' + i;
       newDiv.appendChild(label);
+
+      attachCheckboxListener(input);
     }
   }
 
@@ -248,6 +252,8 @@ document.addEventListener('DOMContentLoaded', function () {
       label.innerHTML = dairy[i];
       label.htmlFor = 'dairy-checkbox' + i;
       newDiv.appendChild(label);
+
+      attachCheckboxListener(input);
     }
   }
 
@@ -287,6 +293,8 @@ document.addEventListener('DOMContentLoaded', function () {
       label.innerHTML = drink[i];
       label.htmlFor = 'drink-checkbox' + i;
       newDiv.appendChild(label);
+
+      attachCheckboxListener(input);
     }
   }
 
@@ -326,6 +334,8 @@ document.addEventListener('DOMContentLoaded', function () {
       label.innerHTML = fruit[i];
       label.htmlFor = 'fruit-checkbox' + i;
       newDiv.appendChild(label);
+
+      attachCheckboxListener(input);
     }
   }
 
@@ -362,6 +372,8 @@ document.addEventListener('DOMContentLoaded', function () {
       label.innerHTML = meat[i];
       label.htmlFor = 'meat-checkbox' + i;
       newDiv.appendChild(label);
+
+      attachCheckboxListener(input);
     }
   }
 
@@ -396,8 +408,59 @@ document.addEventListener('DOMContentLoaded', function () {
       label.innerHTML = other[i];
       label.htmlFor = 'other-checkbox' + i;
       newDiv.appendChild(label);
+
+      attachCheckboxListener(input);
     }
   }
+
+  // 동적으로 생성된 see more ingredients의 checkbox에 이벤트 리스너 연결
+  function attachCheckboxListener(checkbox) {
+    checkbox.addEventListener('change', e => {
+      const checked = e.target.checked;
+      const label = e.target.nextElementSibling.textContent;
+
+      let item;
+      // Checkbox 상태 및 관련 정보 출력
+      console.log('Checkbox clicked!');
+      console.log('Checked status:', e.target.checked);
+      console.log('Label:', e.target.nextElementSibling.textContent);
+
+      if (checked) {
+        console.log('Creating li element...');
+        console.log(list);
+        console.log('After appending child:', list.innerHTML);
+
+        item = document.createElement('li');
+        item.textContent = label;
+        item.classList.add('checked-item');
+        console.log(item);
+        list.appendChild(item);
+        linkIngredient.classList.remove('hidden');
+
+        //휴지통 아이콘 만들기
+        const trashBtn = document.createElement('button');
+        trashBtn.classList.add('trash-icon');
+        item.appendChild(trashBtn);
+
+        //휴지통 아이콘 누르면 아이템 삭제하기
+        trashBtn.addEventListener('click', e => {
+          const listItem = e.target.closest('li');
+          listItem.remove();
+
+          //휴지통 누르면 체크 리스트에 체크된 재료도 체크 풀어주기
+          checkbox.checked = !checkbox.checked;
+        });
+      } else {
+        const items = list.querySelectorAll('li');
+        items.forEach(item => {
+          if (item.textContent === label) {
+            item.remove();
+          }
+        });
+      }
+    });
+  }
+
   // ---- HOME 페이지
 
   // ---- SHOPPING LIST 페이지
@@ -414,6 +477,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const addedLiTitle = document.createElement('h3');
     addedLiTitle.classList.add('list-title');
     addedLiTitle.innerText = listInput.value;
+    addedLiTitle.addEventListener('click', showListDetail);
     // <button> 체크 버튼
     const liCheckBtn = document.createElement('button');
     liCheckBtn.classList.add('list-check-btn');
@@ -437,6 +501,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 입력창 비우기
     listInput.value = '';
+
+    // 리스트 제목 누르면 상세 내용 보여주기
+    function showListDetail() {
+      const listDetail = document.querySelector('#list-detail');
+      listDetail.style.display = 'block';
+      console.log('show');
+    }
 
     // 체크 버튼 누르면 완료 표시로 줄 긋기
     addedLiTitle.style.textDecoration = 'none';
