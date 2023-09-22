@@ -347,30 +347,9 @@ input[type='checkbox']:checked + label {
 }
 
 .list-ul {
-  margin-top: 100px;
-}
-
-/* .list-ul li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 50%;
-  padding: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-
-  list-style: none;
-  border: orange solid 3px;
-  border-radius: 10px;
-  color: rgb(113, 108, 108);
-  background-color: var(--main-box-color);
-} */
-
-.list-ul {
   width: 100%;
   padding: 0;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -378,7 +357,7 @@ input[type='checkbox']:checked + label {
 }
 
 .list-li {
-  width: 70%;
+  width: 100%;
   display: flex;
   gap: 5px;
   justify-content: center;
@@ -425,4 +404,16 @@ input[type='checkbox']:checked + label {
 
 .list-delete-btn {
   background: url('svg/trash-icon.svg');
+}
+
+/* 쇼핑 리스트 상세 보기  */
+textarea#list-detail {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  border: orange solid 3px;
+  border-radius: 10px;
+  background-color: var(--main-box-color);
 }
